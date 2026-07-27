@@ -1,0 +1,24 @@
+# NOTE: artifacts/ is deliberately NOT ignored — it ships with the backend so
+# the API never trains during startup (that trips platform health checks).
+
+# Local environment / experiment output
+.venv/
+.gradio/
+mlruns/
+__pycache__/
+*.pyc
+
+# Frontend
+node_modules/
+frontend/dist/
+.env
+.env.local
+
+# Superseded by train.py / artifacts — not needed by the app
+lr.pkl
+random_forest_model.pkl
+ydata.html
+
+# Separate repos / scratch, not part of this project
+DSLABProject/
+deploy_build/

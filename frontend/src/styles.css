@@ -1,0 +1,266 @@
+:root {
+  --page: #f7f8f7;
+  --surface: #fcfcfb;
+  --border: #e5e7e5;
+  --ink: #0b0b0b;
+  --ink-secondary: #52514e;
+  --muted: #898781;
+  --accent: #1a7f37;
+  --accent-soft: #eaf6ee;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+/* --- Header ---------------------------------------------------------------- */
+.app-header h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+.app-header p {
+  margin: 0;
+  color: var(--ink-secondary);
+}
+
+/* --- Tabs ------------------------------------------------------------------ */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin: 20px 0 22px;
+  border-bottom: 1px solid var(--border);
+}
+.tabs button {
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  color: var(--ink-secondary);
+  padding: 10px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tabs button:hover {
+  color: var(--ink);
+}
+.tabs button[aria-selected="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- Cards ----------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+.card-subtitle {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin: 2px 0 10px;
+}
+
+.summary-card {
+  border-left: 5px solid var(--accent);
+  background: #f6faf7;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  margin-bottom: 18px;
+  color: var(--ink-secondary);
+}
+.summary-card strong {
+  color: var(--ink);
+}
+
+.result-card {
+  border-left: 5px solid var(--accent);
+  background: linear-gradient(90deg, var(--accent-soft) 0%, #fbfdfb 70%);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.result-card .label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #14532d;
+}
+.result-card .value {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-left: 8px;
+  vertical-align: -2px;
+}
+.result-card .from {
+  margin: 4px 0 0;
+  color: var(--ink-secondary);
+}
+
+/* --- Layout ---------------------------------------------------------------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.predict-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .grid-2,
+  .predict-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* --- Form ------------------------------------------------------------------ */
+.field {
+  margin-bottom: 16px;
+}
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin-bottom: 6px;
+}
+.field select {
+  width: 100%;
+  font: inherit;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+.field select:focus-visible,
+.field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+}
+.slider-row output {
+  min-width: 68px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-secondary);
+}
+.slider-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.predict-button {
+  width: 100%;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.predict-button:hover:not(:disabled) {
+  background: var(--accent);
+}
+.predict-button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* --- Tables ---------------------------------------------------------------- */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+th,
+td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  background: #f4f5f4;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+td.ranked {
+  font-weight: 600;
+}
+
+.model-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.model-picker select {
+  font: inherit;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  min-width: 260px;
+}
+
+.status {
+  padding: 40px;
+  text-align: center;
+  color: var(--ink-secondary);
+}
+.status.error {
+  color: #c62828;
+}

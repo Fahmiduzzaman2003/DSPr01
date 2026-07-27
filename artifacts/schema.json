@@ -1,0 +1,131 @@
+{
+  "target": "hsc_result",
+  "features": [
+    {
+      "name": "gender",
+      "kind": "category",
+      "choices": [
+        "F",
+        "M"
+      ],
+      "default": "M"
+    },
+    {
+      "name": "age",
+      "kind": "number",
+      "minimum": 17.0,
+      "maximum": 19.0,
+      "default": 18,
+      "integer": true
+    },
+    {
+      "name": "address",
+      "kind": "category",
+      "choices": [
+        "Rural",
+        "Urban"
+      ],
+      "default": "Rural"
+    },
+    {
+      "name": "famsize",
+      "kind": "category",
+      "choices": [
+        "GT3",
+        "LE3"
+      ],
+      "default": "GT3"
+    },
+    {
+      "name": "Pstatus",
+      "kind": "category",
+      "choices": [
+        "Apart",
+        "Together"
+      ],
+      "default": "Together"
+    },
+    {
+      "name": "M_Edu",
+      "kind": "number",
+      "minimum": 0.0,
+      "maximum": 4.0,
+      "default": 2,
+      "integer": true
+    },
+    {
+      "name": "F_Edu",
+      "kind": "number",
+      "minimum": 0.0,
+      "maximum": 4.0,
+      "default": 2,
+      "integer": true
+    },
+    {
+      "name": "M_Job",
+      "kind": "category",
+      "choices": [
+        "At_home",
+        "Health",
+        "Other",
+        "Services",
+        "Teacher"
+      ],
+      "default": "At_home"
+    },
+    {
+      "name": "F_Job",
+      "kind": "category",
+      "choices": [
+        "Business",
+        "Farmer",
+        "Health",
+        "Services",
+        "Teacher"
+      ],
+      "default": "Health"
+    },
+    {
+      "name": "relationship",
+      "kind": "category",
+      "choices": [
+        "No",
+        "Yes"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "smoker",
+      "kind": "category",
+      "choices": [
+        "No",
+        "Yes"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "tuition_fee",
+      "kind": "number",
+      "minimum": 25102.0,
+      "maximum": 129168.0,
+      "default": 71272,
+      "integer": true
+    },
+    {
+      "name": "time_friends",
+      "kind": "number",
+      "minimum": 1.0,
+      "maximum": 5.0,
+      "default": 3,
+      "integer": true
+    },
+    {
+      "name": "ssc_result",
+      "kind": "number",
+      "minimum": 2.0,
+      "maximum": 5.0,
+      "default": 3.77,
+      "integer": false
+    }
+  ]
+}
