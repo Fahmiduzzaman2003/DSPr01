@@ -3,11 +3,5 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
-    {
-      "comment": "SPA fallback for client routes, but never for /api — those must go to the backend, and swallowing them here returns index.html and produces a confusing JSON parse error.",
-      "source": "/((?!api/).*)",
-      "destination": "/"
-    }
-  ]
+  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/" }]
 }

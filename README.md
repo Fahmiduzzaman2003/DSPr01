@@ -99,6 +99,10 @@ Free tier sleeps after 15 minutes idle; the first request then takes ~50 s.
    It is read at build time, so **redeploy after changing it**.
 4. Deploy, then set `ALLOWED_ORIGINS` on Render to your Vercel URL to lock down CORS.
 
+The SPA rewrite in `vercel.json` uses `/((?!api/).*)` rather than `/(.*)` on
+purpose: a catch-all also swallows `/api/*` and serves `index.html`, so a missing
+`VITE_API_URL` surfaces as `Unexpected token '<'` instead of anything useful.
+
 ## Why `artifacts/` is committed
 
 The API loads pre-trained pipelines at startup. Training instead takes ~15 s
