@@ -13,6 +13,31 @@ export const MUTED = "#898781";
 export const GRID = "#e1e0d9";
 export const AXIS = "#c3c2b7";
 
+/**
+ * Format a value in the target's units (e.g. `$163,000`).
+ *
+ * Targets range from a 0-5 grade to a six-figure price, so decimals and any
+ * prefix come from the API rather than being hardcoded per chart.
+ */
+export function formatTarget(value, config, { compact = false } = {}) {
+  const decimals = config.targetDecimals ?? 2;
+  const text = compact && Math.abs(value) >= 10000
+    ? `${Math.round(value / 1000)}k`
+    : value.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      });
+  return `${config.targetPrefix ?? ""}${text}`;
+}
+
+/** Sensible decimal count for a metric whose scale we don't know in advance. */
+export function metricDecimals(value) {
+  const magnitude = Math.abs(value);
+  if (magnitude >= 1000) return 0;
+  if (magnitude >= 1) return 2;
+  return 4;
+}
+
 const hexToRgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
 const rgbToHex = (rgb) =>
   "#" + rgb.map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");

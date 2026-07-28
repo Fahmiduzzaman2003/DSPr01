@@ -27,9 +27,14 @@ export default function RankBarChart({
   height = 300,
 }) {
   const max = Math.max(...rows.map((r) => r.value));
-  // Enough significant digits to tell the ticks apart without printing raw floats.
+  // Enough significant digits to tell the ticks apart without printing raw
+  // floats, and thousands separators once the scale gets large.
   const decimals = max < 0.1 ? 4 : max < 10 ? 2 : 0;
-  const formatTick = (v) => Number(v).toFixed(decimals);
+  const formatTick = (v) =>
+    Number(v).toLocaleString(undefined, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
 
   return (
     <div className="card">
@@ -67,7 +72,7 @@ export default function RankBarChart({
               borderRadius: 8,
               fontSize: 12,
             }}
-            formatter={(value, _n, item) => [item.payload.hover, item.payload.name]}
+            formatter={(_value, _n, item) => [item.payload.hover, item.payload.name]}
           />
           {referenceValue != null && (
             <ReferenceLine

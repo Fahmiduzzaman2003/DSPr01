@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { postPredict } from "../api.js";
-import { rankColors } from "../theme.js";
+import { formatTarget, rankColors } from "../theme.js";
 import RankBarChart from "./RankBarChart.jsx";
 
 /** Default form state: the median / most common value for every feature. */
@@ -89,8 +89,8 @@ export default function PredictTab({ config }) {
     result?.predictions.map((p, i) => ({
       name: p.model,
       value: p.value,
-      label: `${p.value.toFixed(2)}${i === 0 ? "  ·  best model" : ""}`,
-      hover: `Predicted ${p.value.toFixed(3)} · rank #${p.rank}`,
+      label: `${formatTarget(p.value, config, { compact: true })}${i === 0 ? "  ·  best model" : ""}`,
+      hover: `Predicted ${formatTarget(p.value, config)} · rank #${p.rank}`,
       color: colors[i],
     })) ?? [];
 
@@ -122,7 +122,7 @@ export default function PredictTab({ config }) {
             <div className="result-card">
               <div>
                 <span className="label">Predicted {config.targetLabel}:</span>
-                <span className="value">{result.headline.toFixed(2)}</span>
+                <span className="value">{formatTarget(result.headline, config)}</span>
               </div>
               <p className="from">
                 from <strong>{result.bestModel}</strong> — the most accurate model on
@@ -132,7 +132,7 @@ export default function PredictTab({ config }) {
 
             <RankBarChart
               title="Prediction by model"
-              subtitle={`ranked by hold-out accuracy · dashed line = average (${result.mean.toFixed(2)})`}
+              subtitle={`ranked by hold-out accuracy · dashed line = average (${formatTarget(result.mean, config)})`}
               rows={rows}
               referenceValue={result.mean}
             />
@@ -152,7 +152,12 @@ export default function PredictTab({ config }) {
                   <tbody>
                     {result.predictions.map((p, i) => (
                       <tr key={p.model}>
-                        {[`#${p.rank}`, p.model, p.value.toFixed(3), p.r2.toFixed(4)].map(
+                        {[
+                          `#${p.rank}`,
+                          p.model,
+                          formatTarget(p.value, config),
+                          p.r2.toFixed(4),
+                        ].map(
                           (cell, c) => (
                             <td key={c} className="ranked" style={{ color: colors[i] }}>
                               {cell}

@@ -1,4 +1,4 @@
-import { rankColors } from "../theme.js";
+import { formatTarget, metricDecimals, rankColors } from "../theme.js";
 import RankBarChart from "./RankBarChart.jsx";
 
 const CHART_ORDER = ["MAE", "MSE", "RMSE", "R2"];
@@ -16,16 +16,24 @@ function rankForMetric(metric, config) {
 
   const best = entries[0].value;
   const colors = rankColors(entries.length, config.rankColors);
+  // MSE on a six-figure target runs to 10 digits; R² needs four decimals.
+  const decimals = metricDecimals(best);
+  const show = (v) =>
+    v.toLocaleString(undefined, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+
   return entries.map((entry, i) => {
     const gap = Math.abs(entry.value - best) / Math.abs(best) * 100;
     return {
       name: entry.model,
       value: entry.value,
-      label: `${entry.value.toFixed(4)}${i === 0 ? "  ·  best" : `  ·  ${gap.toFixed(1)}% worse`}`,
+      label: `${show(entry.value)}${i === 0 ? "  ·  best" : `  ·  ${gap.toFixed(1)}% worse`}`,
       hover:
         i === 0
-          ? `${metric} ${entry.value.toFixed(4)} · best model`
-          : `${metric} ${entry.value.toFixed(4)} · ${gap.toFixed(1)}% worse than best`,
+          ? `${metric} ${show(entry.value)} · best model`
+          : `${metric} ${show(entry.value)} · ${gap.toFixed(1)}% worse than best`,
       color: colors[i],
     };
   });
@@ -40,8 +48,9 @@ export default function ComparisonTab({ config }) {
     <>
       <div className="summary-card">
         <strong>Best model: {best}</strong> — R² {bestScores.R2.toFixed(4)}, MAE{" "}
-        {bestScores.MAE.toFixed(4)}, MSE {bestScores.MSE.toFixed(4)}. All figures are
-        on the same {config.testSizePercent}% hold-out split. In every chart below,{" "}
+        {formatTarget(bestScores.MAE, config)}, RMSE{" "}
+        {formatTarget(bestScores.RMSE, config)}. All figures are on the same{" "}
+        {config.testSizePercent}% hold-out split. In every chart below,{" "}
         <strong>green is the best model and red the worst</strong>.
       </div>
 
@@ -79,9 +88,14 @@ export default function ComparisonTab({ config }) {
                     // Colour by this model's position within this metric's own ranking.
                     const ranked = rankForMetric(metric, config);
                     const row = ranked.find((r) => r.name === model);
+                    const value = config.metrics[model][metric];
+                    const decimals = metricDecimals(value);
                     return (
                       <td key={metric} className="ranked" style={{ color: row.color }}>
-                        {config.metrics[model][metric].toFixed(4)}
+                        {value.toLocaleString(undefined, {
+                          minimumFractionDigits: decimals,
+                          maximumFractionDigits: decimals,
+                        })}
                       </td>
                     );
                   })}

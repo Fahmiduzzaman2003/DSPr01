@@ -75,7 +75,11 @@ def health() -> dict:
 def get_config() -> dict:
     """Everything the UI needs to render before the user does anything."""
     return {
+        "appTitle": config.APP_TITLE,
+        "appSubtitle": config.APP_SUBTITLE.format(n=len(MODEL_RANKING)),
         "targetLabel": config.TARGET_LABEL,
+        "targetPrefix": config.TARGET_PREFIX,
+        "targetDecimals": config.TARGET_DECIMALS,
         "testSizePercent": int(config.TEST_SIZE * 100),
         "features": [
             {**feature, "label": config.FEATURE_LABELS.get(feature["name"], feature["name"])}

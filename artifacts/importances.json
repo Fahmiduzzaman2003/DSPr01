@@ -1,434 +1,434 @@
 {
   "Linear Regression": [
     {
-      "feature": "ssc_result",
-      "importance": 1.7331739503103354,
-      "std": 0.10232464750593225
+      "feature": "GrLivArea",
+      "importance": 0.2531850151704065,
+      "std": 0.013142250766363205
     },
     {
-      "feature": "time_friends",
-      "importance": 0.03545912417839329,
-      "std": 0.003635044137706652
+      "feature": "OverallQual",
+      "importance": 0.10670969491732936,
+      "std": 0.007331733182600228
     },
     {
-      "feature": "relationship",
-      "importance": 0.02577579498830328,
-      "std": 0.0031122657742512386
+      "feature": "Neighborhood",
+      "importance": 0.0998884348491815,
+      "std": 0.00779274396844183
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.015624099198180507,
-      "std": 0.002004510806785368
+      "feature": "KitchenQual",
+      "importance": 0.04681832734577067,
+      "std": 0.006752832111159421
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.012929567360528827,
-      "std": 0.0015838188741508575
+      "feature": "GarageCars",
+      "importance": 0.04434407471828594,
+      "std": 0.0038510666524011633
     },
     {
-      "feature": "famsize",
-      "importance": 0.0002826427676577148,
-      "std": 0.00017226276621253159
+      "feature": "ExterQual",
+      "importance": 0.01745398851883523,
+      "std": 0.0012019824799071425
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.00025420322474269954,
-      "std": 0.0001788399582334854
+      "feature": "HouseStyle",
+      "importance": 0.010498986592902593,
+      "std": 0.003533876837313498
     },
     {
-      "feature": "F_Job",
-      "importance": 0.00014428279310206847,
-      "std": 0.00027515046793003364
+      "feature": "YearBuilt",
+      "importance": 0.009222892216412804,
+      "std": 0.002136786240453254
     },
     {
-      "feature": "age",
-      "importance": 0.00013876451665125744,
-      "std": 0.0002665177201925078
+      "feature": "YearRemodAdd",
+      "importance": 0.006655855014361711,
+      "std": 0.0020919211822767853
     },
     {
-      "feature": "smoker",
-      "importance": 0.0001333702326664188,
-      "std": 0.00011804062053297354
+      "feature": "LotArea",
+      "importance": 0.0062918168703505195,
+      "std": 0.001684420237917357
     },
     {
-      "feature": "M_Job",
-      "importance": 0.00010134395935642581,
-      "std": 0.0002654330958088161
+      "feature": "GarageType",
+      "importance": 0.005996188349519094,
+      "std": 0.0019831275236258414
     },
     {
-      "feature": "gender",
-      "importance": -6.672311544919652e-06,
-      "std": 4.2324391852834946e-05
+      "feature": "TotalBsmtSF",
+      "importance": 0.0024061189123572692,
+      "std": 0.00028258295532436104
     },
     {
-      "feature": "Pstatus",
-      "importance": -8.239136495954424e-05,
-      "std": 2.588244655496851e-05
+      "feature": "CentralAir",
+      "importance": 0.0014238359853430693,
+      "std": 0.0009465667316610651
     },
     {
-      "feature": "address",
-      "importance": -8.300463730738228e-05,
-      "std": 0.00010596549503310746
+      "feature": "FullBath",
+      "importance": -0.00022750406317493255,
+      "std": 0.00011662834447950934
     }
   ],
   "Random Forest": [
     {
-      "feature": "ssc_result",
-      "importance": 1.7523669268325086,
-      "std": 0.10082673381792859
+      "feature": "OverallQual",
+      "importance": 0.5381281562311213,
+      "std": 0.0356275996547676
     },
     {
-      "feature": "time_friends",
-      "importance": 0.028971382970896464,
-      "std": 0.0033204860190875667
+      "feature": "GrLivArea",
+      "importance": 0.17225788769996245,
+      "std": 0.010809079689869256
     },
     {
-      "feature": "relationship",
-      "importance": 0.016576247747487217,
-      "std": 0.0022981689793005592
+      "feature": "TotalBsmtSF",
+      "importance": 0.08695900014321299,
+      "std": 0.005419386656679296
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.007552632902044043,
-      "std": 0.001160236249627361
+      "feature": "GarageCars",
+      "importance": 0.03135746663259682,
+      "std": 0.0031619179574222007
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.005430852836605893,
-      "std": 0.0015638168711897837
+      "feature": "LotArea",
+      "importance": 0.020754343017318867,
+      "std": 0.0038870186010911256
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.00039089215360804674,
-      "std": 0.0005337366733682526
+      "feature": "YearBuilt",
+      "importance": 0.014758811044701059,
+      "std": 0.001768320126877567
     },
     {
-      "feature": "famsize",
-      "importance": 0.00028533857903524363,
-      "std": 0.00028062383257015385
+      "feature": "Neighborhood",
+      "importance": 0.011539753277623733,
+      "std": 0.002047067280983684
     },
     {
-      "feature": "smoker",
-      "importance": 0.00027691465184831454,
-      "std": 0.00016740360695590274
+      "feature": "FullBath",
+      "importance": 0.00868249587792902,
+      "std": 0.002139893835798314
     },
     {
-      "feature": "Pstatus",
-      "importance": 4.012636093642108e-05,
-      "std": 0.0001328188540029169
+      "feature": "YearRemodAdd",
+      "importance": 0.007791752182133771,
+      "std": 0.0025601652851588094
     },
     {
-      "feature": "F_Job",
-      "importance": 2.9651366489091836e-05,
-      "std": 0.0003112786988793178
+      "feature": "KitchenQual",
+      "importance": 0.00549749174510109,
+      "std": 0.0010946238524590093
     },
     {
-      "feature": "age",
-      "importance": -1.9114188069635495e-05,
-      "std": 0.00022122407628814226
+      "feature": "GarageType",
+      "importance": 0.003110544285353389,
+      "std": 0.000754194571437526
     },
     {
-      "feature": "address",
-      "importance": -0.00023015346053019138,
-      "std": 0.0001311927502270933
+      "feature": "CentralAir",
+      "importance": 0.0029037223287251336,
+      "std": 0.0003026420749767458
     },
     {
-      "feature": "gender",
-      "importance": -0.0002821897229578929,
-      "std": 0.0002254324974584709
+      "feature": "HouseStyle",
+      "importance": 0.0009352490132187418,
+      "std": 0.0004585812024132655
     },
     {
-      "feature": "M_Job",
-      "importance": -0.0006557061914813422,
-      "std": 0.00038337291775073255
+      "feature": "ExterQual",
+      "importance": 0.0008300040465421099,
+      "std": 0.000898877932975662
     }
   ],
   "Gradient Boosting": [
     {
-      "feature": "ssc_result",
-      "importance": 1.7479076872615606,
-      "std": 0.09752611805674193
+      "feature": "OverallQual",
+      "importance": 0.3011308928978116,
+      "std": 0.024049528145726463
     },
     {
-      "feature": "time_friends",
-      "importance": 0.033275346430222855,
-      "std": 0.003698650689562742
+      "feature": "GrLivArea",
+      "importance": 0.16848701832936558,
+      "std": 0.012153127413138893
     },
     {
-      "feature": "relationship",
-      "importance": 0.02138782734435448,
-      "std": 0.0026987265091262345
+      "feature": "TotalBsmtSF",
+      "importance": 0.07054184013487626,
+      "std": 0.007293579430571829
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.011255191139741461,
-      "std": 0.0014103855588565094
+      "feature": "GarageCars",
+      "importance": 0.02703045895567833,
+      "std": 0.0026852510017538068
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.010348781688360741,
-      "std": 0.0014934110920160955
+      "feature": "LotArea",
+      "importance": 0.019268226107522213,
+      "std": 0.00551382129264999
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.0007585628703209113,
-      "std": 0.0002845928500467958
+      "feature": "Neighborhood",
+      "importance": 0.018984639601394616,
+      "std": 0.006062544984766911
     },
     {
-      "feature": "F_Job",
-      "importance": 0.00029260250354781194,
-      "std": 0.00014582159729053444
+      "feature": "YearBuilt",
+      "importance": 0.016696668313392372,
+      "std": 0.0024492906628973852
     },
     {
-      "feature": "M_Job",
-      "importance": 0.00017556325042707987,
-      "std": 0.0001501476114573964
+      "feature": "KitchenQual",
+      "importance": 0.015249057343302785,
+      "std": 0.0037787544190933356
     },
     {
-      "feature": "age",
-      "importance": 0.00012040836403228727,
-      "std": 6.320477506279385e-05
+      "feature": "YearRemodAdd",
+      "importance": 0.012932807095632538,
+      "std": 0.0046619583294168765
     },
     {
-      "feature": "Pstatus",
-      "importance": 0.00010519737425980224,
-      "std": 1.98669349215137e-05
+      "feature": "FullBath",
+      "importance": 0.002561088788520316,
+      "std": 0.0008327797387843005
     },
     {
-      "feature": "famsize",
-      "importance": 3.7731430438703305e-05,
-      "std": 7.421287486892737e-05
+      "feature": "CentralAir",
+      "importance": 0.0022264648231294258,
+      "std": 0.00041434461274627037
     },
     {
-      "feature": "address",
-      "importance": 3.4708473696798414e-05,
-      "std": 3.564145093905427e-05
+      "feature": "GarageType",
+      "importance": 0.0010796584355855176,
+      "std": 0.0008812609610861534
     },
     {
-      "feature": "smoker",
-      "importance": 1.0187705379527402e-06,
-      "std": 7.38199472734315e-05
+      "feature": "ExterQual",
+      "importance": 0.0008227458859132563,
+      "std": 0.0002633463118631782
     },
     {
-      "feature": "gender",
-      "importance": -2.6094117877406564e-05,
-      "std": 8.937208939971723e-05
+      "feature": "HouseStyle",
+      "importance": 0.0006154068297671178,
+      "std": 0.0007573281996169711
     }
   ],
   "Support Vector Regression": [
     {
-      "feature": "ssc_result",
-      "importance": 1.6954620975397898,
-      "std": 0.09911858262585516
+      "feature": "GrLivArea",
+      "importance": 0.2249220482300764,
+      "std": 0.02274057200573951
     },
     {
-      "feature": "time_friends",
-      "importance": 0.03845971079322615,
-      "std": 0.004333743330833672
+      "feature": "OverallQual",
+      "importance": 0.17018669441203257,
+      "std": 0.02117564511390581
     },
     {
-      "feature": "relationship",
-      "importance": 0.026963022777347502,
-      "std": 0.0031670566822591005
+      "feature": "TotalBsmtSF",
+      "importance": 0.13329758187081217,
+      "std": 0.010788607867151523
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.013719869948647745,
-      "std": 0.0023121890336815806
+      "feature": "GarageCars",
+      "importance": 0.09561595341363557,
+      "std": 0.016266815301681264
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.012246602995896194,
-      "std": 0.0019404813122202253
+      "feature": "YearRemodAdd",
+      "importance": 0.06538696549834441,
+      "std": 0.0125052903309553
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.00365822148198115,
-      "std": 0.0014011554188995382
+      "feature": "YearBuilt",
+      "importance": 0.0400736408241482,
+      "std": 0.008016043437582675
     },
     {
-      "feature": "address",
-      "importance": 0.002746631195432547,
-      "std": 0.0006439158709823244
+      "feature": "FullBath",
+      "importance": 0.03600783488779012,
+      "std": 0.01216267128691514
     },
     {
-      "feature": "F_Job",
-      "importance": 0.0021342024941518266,
-      "std": 0.0009151729017534963
+      "feature": "LotArea",
+      "importance": 0.028816148259154163,
+      "std": 0.005435193010505976
     },
     {
-      "feature": "age",
-      "importance": 0.0016890413651946435,
-      "std": 0.0012883518965877514
+      "feature": "Neighborhood",
+      "importance": 0.026892717833259507,
+      "std": 0.002004776021887311
     },
     {
-      "feature": "smoker",
-      "importance": 0.0012317030982978761,
-      "std": 0.0007987249252551379
+      "feature": "KitchenQual",
+      "importance": 0.022427856311220795,
+      "std": 0.003707707929181392
     },
     {
-      "feature": "gender",
-      "importance": 0.0011146226799030768,
-      "std": 0.00038547378879656214
+      "feature": "GarageType",
+      "importance": 0.012732872665368955,
+      "std": 0.004696205892038644
     },
     {
-      "feature": "M_Job",
-      "importance": 0.001088440431958826,
-      "std": 0.0011251244935781594
+      "feature": "HouseStyle",
+      "importance": 0.011404278641576615,
+      "std": 0.00351121611917465
     },
     {
-      "feature": "famsize",
-      "importance": 0.0005552866375686305,
-      "std": 0.0007095738808534177
+      "feature": "ExterQual",
+      "importance": 0.010105272656011433,
+      "std": 0.003228609120998763
     },
     {
-      "feature": "Pstatus",
-      "importance": -0.0006517369834279751,
-      "std": 0.00023174406852265956
+      "feature": "CentralAir",
+      "importance": 0.0038230240178927953,
+      "std": 0.001111080564233091
     }
   ],
   "Voting Ensemble": [
     {
-      "feature": "ssc_result",
-      "importance": 1.7443271894392525,
-      "std": 0.09999243293708716
+      "feature": "OverallQual",
+      "importance": 0.29211705040071145,
+      "std": 0.01935515963006134
     },
     {
-      "feature": "time_friends",
-      "importance": 0.032232509414692835,
-      "std": 0.003289967939489996
+      "feature": "GrLivArea",
+      "importance": 0.1931178921030013,
+      "std": 0.009637867584818244
     },
     {
-      "feature": "relationship",
-      "importance": 0.021094898287168994,
-      "std": 0.002619085065990389
+      "feature": "TotalBsmtSF",
+      "importance": 0.04862898810821546,
+      "std": 0.004082564028838817
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.010676135872388226,
-      "std": 0.001315422145586429
+      "feature": "GarageCars",
+      "importance": 0.03503961240457589,
+      "std": 0.002666150389635845
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.01009235598050181,
-      "std": 0.0015518708570106477
+      "feature": "Neighborhood",
+      "importance": 0.034359748543464796,
+      "std": 0.0046256762870324755
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.00044461239731365956,
-      "std": 0.00021408441452410945
+      "feature": "KitchenQual",
+      "importance": 0.020572125500922234,
+      "std": 0.0031776846773001787
     },
     {
-      "feature": "age",
-      "importance": 0.00017579272234945486,
-      "std": 0.00013065604649061023
+      "feature": "LotArea",
+      "importance": 0.015555577575937007,
+      "std": 0.0033508878313990185
     },
     {
-      "feature": "F_Job",
-      "importance": 0.0001739520976508091,
-      "std": 0.00017211482511412008
+      "feature": "YearBuilt",
+      "importance": 0.012956771246740361,
+      "std": 0.0017125053402640912
     },
     {
-      "feature": "smoker",
-      "importance": 0.00013250019455552932,
-      "std": 0.00010325089045021067
+      "feature": "YearRemodAdd",
+      "importance": 0.009582265457518035,
+      "std": 0.0026434582162767873
     },
     {
-      "feature": "famsize",
-      "importance": 0.00011924276210799612,
-      "std": 0.00011516542079705166
+      "feature": "ExterQual",
+      "importance": 0.0043946742867391865,
+      "std": 0.0006072694111215238
     },
     {
-      "feature": "Pstatus",
-      "importance": 5.926567794322102e-05,
-      "std": 3.476125254801865e-05
+      "feature": "FullBath",
+      "importance": 0.004162085668570637,
+      "std": 0.000957590936212009
     },
     {
-      "feature": "M_Job",
-      "importance": -7.781216172267902e-05,
-      "std": 0.0001595404607624293
+      "feature": "GarageType",
+      "importance": 0.0030748268725590113,
+      "std": 0.0010171376481517352
     },
     {
-      "feature": "address",
-      "importance": -9.751752697967353e-05,
-      "std": 4.338978292298653e-05
+      "feature": "CentralAir",
+      "importance": 0.00195265263441875,
+      "std": 0.00047983768681075323
     },
     {
-      "feature": "gender",
-      "importance": -0.00011651624195060383,
-      "std": 5.9813166212140925e-05
+      "feature": "HouseStyle",
+      "importance": 0.0016735612646270436,
+      "std": 0.0007891421109482474
     }
   ],
   "Stacking Ensemble": [
     {
-      "feature": "ssc_result",
-      "importance": 1.7579195889982238,
-      "std": 0.09984920739587246
+      "feature": "OverallQual",
+      "importance": 0.26237234040270463,
+      "std": 0.0180769326566278
     },
     {
-      "feature": "time_friends",
-      "importance": 0.03342362412912327,
-      "std": 0.0034124068375457504
+      "feature": "GrLivArea",
+      "importance": 0.19043649164633253,
+      "std": 0.01024689262818085
     },
     {
-      "feature": "relationship",
-      "importance": 0.022315889456361194,
-      "std": 0.0027052074572919377
+      "feature": "TotalBsmtSF",
+      "importance": 0.04748633316624604,
+      "std": 0.004619695507562511
     },
     {
-      "feature": "F_Edu",
-      "importance": 0.01165639272666249,
-      "std": 0.0014108429888545597
+      "feature": "Neighborhood",
+      "importance": 0.03331988640123583,
+      "std": 0.0055355345571277415
     },
     {
-      "feature": "M_Edu",
-      "importance": 0.011381391687177844,
-      "std": 0.0015395618349722568
+      "feature": "GarageCars",
+      "importance": 0.03321937315936653,
+      "std": 0.0025779463233367365
     },
     {
-      "feature": "tuition_fee",
-      "importance": 0.0004730079057715275,
-      "std": 0.00015001367154148965
+      "feature": "KitchenQual",
+      "importance": 0.022098724979650153,
+      "std": 0.003831713306175771
     },
     {
-      "feature": "F_Job",
-      "importance": 0.00022030109210052773,
-      "std": 0.00012663751030307605
+      "feature": "LotArea",
+      "importance": 0.015376526387438982,
+      "std": 0.0038645844163459593
     },
     {
-      "feature": "age",
-      "importance": 0.00016454912651759913,
-      "std": 0.00010307745677146209
+      "feature": "YearBuilt",
+      "importance": 0.013265800926026305,
+      "std": 0.0019409681893222497
     },
     {
-      "feature": "famsize",
-      "importance": 9.818408242450172e-05,
-      "std": 8.318733761779746e-05
+      "feature": "YearRemodAdd",
+      "importance": 0.010477906695712958,
+      "std": 0.0033061256415264527
     },
     {
-      "feature": "M_Job",
-      "importance": 9.314571327563303e-05,
-      "std": 0.00011328688973095135
+      "feature": "ExterQual",
+      "importance": 0.0038979566000910348,
+      "std": 0.0005139272008668353
     },
     {
-      "feature": "Pstatus",
-      "importance": 6.173659803243581e-05,
-      "std": 1.608061496460415e-05
+      "feature": "FullBath",
+      "importance": 0.0030100949630559757,
+      "std": 0.0006997272551505025
     },
     {
-      "feature": "smoker",
-      "importance": 5.8604024609865134e-05,
-      "std": 8.177906207782684e-05
+      "feature": "GarageType",
+      "importance": 0.0024000588306279714,
+      "std": 0.0010612976133374025
     },
     {
-      "feature": "gender",
-      "importance": -4.191175180536799e-05,
-      "std": 4.277591048374404e-05
+      "feature": "CentralAir",
+      "importance": 0.0018379448640586272,
+      "std": 0.0004992357169093235
     },
     {
-      "feature": "address",
-      "importance": -4.9009954810919075e-05,
-      "std": 2.7483593684760845e-05
+      "feature": "HouseStyle",
+      "importance": 0.0015579519824974962,
+      "std": 0.0007425821184890194
     }
   ]
 }

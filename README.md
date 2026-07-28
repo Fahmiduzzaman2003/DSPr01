@@ -1,7 +1,13 @@
-# HSC Result Predictor
+# House Price Predictor
 
-Predicts a student's HSC result from background data (family, schooling, habits,
-SSC result) and compares six regression models side by side.
+Predicts a home's sale price from 14 of its characteristics and compares six
+regression models side by side.
+
+Dataset: **Ames Housing** — Kaggle's "House Prices: Advanced Regression
+Techniques", fetched through scikit-learn's OpenML mirror and cut from 81
+columns to 14 interpretable ones by [scripts/build_dataset.py](scripts/build_dataset.py).
+1,460 rows, mixed numeric and categorical, with 81 genuine missing values so
+the pipeline's imputer does real work.
 
 **React frontend + FastAPI backend**, deployed separately: frontend on Vercel,
 backend on Render.
@@ -10,8 +16,9 @@ backend on Render.
 
 | Tab | Contents |
 |---|---|
-| **Predict** | Form generated from the training schema; every model scores the same student. Results ranked green (most accurate model) → red (least). |
+| **Predict** | Form generated from the training schema; every model scores the same house. Results ranked green (most accurate model) → red (least). |
 | **Model comparison** | MAE, MSE, RMSE and R² as bar charts, coloured green (best) → red (worst) and labelled with the gap to the winner, plus a metrics table tinted by ranking. |
+| **Feature importance** | Permutation importance per model — the only method every model supports, so scores stay comparable. |
 | **Diagnostics** | Actual vs predicted scatter and a residual histogram for any model, in that model's rank colour. |
 
 Colour is never the only cue: charts are sorted best-to-worst, every bar carries
@@ -30,10 +37,11 @@ categorical) and evaluated on an identical 20% hold-out split.
 | Path | Role |
 |---|---|
 | [config.py](config.py) | Paths, model zoo, metric definitions, form labels, rank ramp |
+| [scripts/build_dataset.py](scripts/build_dataset.py) | Rebuilds `ames_housing.csv` from OpenML |
 | [train.py](train.py) | Trains all models → `artifacts/` |
 | [main.py](main.py) | FastAPI backend |
 | [frontend/](frontend/) | React + Vite + Recharts UI |
-| [notebook.ipynb](notebook.ipynb) | Original exploration (unchanged) |
+| [notebook.ipynb](notebook.ipynb) | Earlier exploration on the original BSP student dataset |
 
 ## API
 
@@ -41,8 +49,9 @@ categorical) and evaluated on an identical 20% hold-out split.
 |---|---|
 | `GET /api/health` | liveness probe |
 | `GET /api/config` | features, model ranking, metrics, rank colours |
-| `POST /api/predict` | every model's prediction for one student |
+| `POST /api/predict` | every model's prediction for one house |
 | `GET /api/diagnostics/{model}` | hold-out scatter points + binned residuals |
+| `GET /api/importance/{model}` | permutation importance per feature |
 
 ## Run locally
 

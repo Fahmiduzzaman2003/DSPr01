@@ -25,13 +25,10 @@ export default function App() {
 
   return (
     <div className="page">
+      {/* Title and blurb come from the API so they follow the dataset. */}
       <header className="app-header">
-        <h1>HSC Result Predictor</h1>
-        <p>
-          {config ? config.modelRanking.length : ""} regression models trained on
-          student background data — predict a result and compare how the models
-          perform.
-        </p>
+        <h1>{config?.appTitle ?? "Loading…"}</h1>
+        <p>{config?.appSubtitle ?? ""}</p>
       </header>
 
       {error && (

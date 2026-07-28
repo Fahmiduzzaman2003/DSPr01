@@ -1,131 +1,160 @@
 {
-  "target": "hsc_result",
+  "target": "SalePrice",
   "features": [
     {
-      "name": "gender",
-      "kind": "category",
-      "choices": [
-        "F",
-        "M"
-      ],
-      "default": "M"
-    },
-    {
-      "name": "age",
-      "kind": "number",
-      "minimum": 17.0,
-      "maximum": 19.0,
-      "default": 18,
-      "integer": true
-    },
-    {
-      "name": "address",
-      "kind": "category",
-      "choices": [
-        "Rural",
-        "Urban"
-      ],
-      "default": "Rural"
-    },
-    {
-      "name": "famsize",
-      "kind": "category",
-      "choices": [
-        "GT3",
-        "LE3"
-      ],
-      "default": "GT3"
-    },
-    {
-      "name": "Pstatus",
-      "kind": "category",
-      "choices": [
-        "Apart",
-        "Together"
-      ],
-      "default": "Together"
-    },
-    {
-      "name": "M_Edu",
-      "kind": "number",
-      "minimum": 0.0,
-      "maximum": 4.0,
-      "default": 2,
-      "integer": true
-    },
-    {
-      "name": "F_Edu",
-      "kind": "number",
-      "minimum": 0.0,
-      "maximum": 4.0,
-      "default": 2,
-      "integer": true
-    },
-    {
-      "name": "M_Job",
-      "kind": "category",
-      "choices": [
-        "At_home",
-        "Health",
-        "Other",
-        "Services",
-        "Teacher"
-      ],
-      "default": "At_home"
-    },
-    {
-      "name": "F_Job",
-      "kind": "category",
-      "choices": [
-        "Business",
-        "Farmer",
-        "Health",
-        "Services",
-        "Teacher"
-      ],
-      "default": "Health"
-    },
-    {
-      "name": "relationship",
-      "kind": "category",
-      "choices": [
-        "No",
-        "Yes"
-      ],
-      "default": "No"
-    },
-    {
-      "name": "smoker",
-      "kind": "category",
-      "choices": [
-        "No",
-        "Yes"
-      ],
-      "default": "No"
-    },
-    {
-      "name": "tuition_fee",
-      "kind": "number",
-      "minimum": 25102.0,
-      "maximum": 129168.0,
-      "default": 71272,
-      "integer": true
-    },
-    {
-      "name": "time_friends",
+      "name": "OverallQual",
       "kind": "number",
       "minimum": 1.0,
-      "maximum": 5.0,
-      "default": 3,
+      "maximum": 10.0,
+      "default": 6,
       "integer": true
     },
     {
-      "name": "ssc_result",
+      "name": "GrLivArea",
       "kind": "number",
-      "minimum": 2.0,
-      "maximum": 5.0,
-      "default": 3.77,
-      "integer": false
+      "minimum": 334.0,
+      "maximum": 5642.0,
+      "default": 1464,
+      "integer": true
+    },
+    {
+      "name": "YearBuilt",
+      "kind": "number",
+      "minimum": 1872.0,
+      "maximum": 2010.0,
+      "default": 1973,
+      "integer": true
+    },
+    {
+      "name": "YearRemodAdd",
+      "kind": "number",
+      "minimum": 1950.0,
+      "maximum": 2010.0,
+      "default": 1994,
+      "integer": true
+    },
+    {
+      "name": "TotalBsmtSF",
+      "kind": "number",
+      "minimum": 0.0,
+      "maximum": 6110.0,
+      "default": 992,
+      "integer": true
+    },
+    {
+      "name": "GarageCars",
+      "kind": "number",
+      "minimum": 0.0,
+      "maximum": 4.0,
+      "default": 2,
+      "integer": true
+    },
+    {
+      "name": "FullBath",
+      "kind": "number",
+      "minimum": 0.0,
+      "maximum": 3.0,
+      "default": 2,
+      "integer": true
+    },
+    {
+      "name": "LotArea",
+      "kind": "number",
+      "minimum": 1300.0,
+      "maximum": 215245.0,
+      "default": 9478,
+      "integer": true
+    },
+    {
+      "name": "Neighborhood",
+      "kind": "category",
+      "choices": [
+        "Blmngtn",
+        "Blueste",
+        "BrDale",
+        "BrkSide",
+        "ClearCr",
+        "CollgCr",
+        "Crawfor",
+        "Edwards",
+        "Gilbert",
+        "IDOTRR",
+        "MeadowV",
+        "Mitchel",
+        "NAmes",
+        "NPkVill",
+        "NWAmes",
+        "NoRidge",
+        "NridgHt",
+        "OldTown",
+        "SWISU",
+        "Sawyer",
+        "SawyerW",
+        "Somerst",
+        "StoneBr",
+        "Timber",
+        "Veenker"
+      ],
+      "default": "NAmes"
+    },
+    {
+      "name": "HouseStyle",
+      "kind": "category",
+      "choices": [
+        "1.5Fin",
+        "1.5Unf",
+        "1Story",
+        "2.5Fin",
+        "2.5Unf",
+        "2Story",
+        "SFoyer",
+        "SLvl"
+      ],
+      "default": "1Story"
+    },
+    {
+      "name": "ExterQual",
+      "kind": "category",
+      "choices": [
+        "Ex",
+        "Fa",
+        "Gd",
+        "TA"
+      ],
+      "default": "TA"
+    },
+    {
+      "name": "KitchenQual",
+      "kind": "category",
+      "choices": [
+        "Ex",
+        "Fa",
+        "Gd",
+        "TA"
+      ],
+      "default": "TA"
+    },
+    {
+      "name": "CentralAir",
+      "kind": "category",
+      "choices": [
+        "N",
+        "Y"
+      ],
+      "default": "Y"
+    },
+    {
+      "name": "GarageType",
+      "kind": "category",
+      "choices": [
+        "2Types",
+        "Attchd",
+        "Basment",
+        "BuiltIn",
+        "CarPort",
+        "Detchd"
+      ],
+      "default": "Attchd"
     }
   ]
 }
