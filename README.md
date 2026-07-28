@@ -20,6 +20,7 @@ backend on Render.
 | **Model comparison** | MAE, MSE, RMSE and R² as bar charts, coloured green (best) → red (worst) and labelled with the gap to the winner, plus a metrics table tinted by ranking. |
 | **Feature importance** | Permutation importance per model — the only method every model supports, so scores stay comparable. |
 | **Diagnostics** | Actual vs predicted scatter and a residual histogram for any model, in that model's rank colour. |
+| **EDA** | The ydata-profiling report for the dataset, embedded — distributions, missing values, correlations, interactions. |
 
 Colour is never the only cue: charts are sorted best-to-worst, every bar carries
 a value label, and the table repeats the numbers in full.
@@ -38,6 +39,7 @@ categorical) and evaluated on an identical 20% hold-out split.
 |---|---|
 | [config.py](config.py) | Paths, model zoo, metric definitions, form labels, rank ramp |
 | [scripts/build_dataset.py](scripts/build_dataset.py) | Rebuilds `ames_housing.csv` from OpenML |
+| [scripts/build_profile.py](scripts/build_profile.py) | Rebuilds `frontend/public/eda.html` (needs its own env, see the file) |
 | [train.py](train.py) | Trains all models → `artifacts/` |
 | [main.py](main.py) | FastAPI backend |
 | [frontend/](frontend/) | React + Vite + Recharts UI |

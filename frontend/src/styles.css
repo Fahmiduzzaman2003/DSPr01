@@ -256,6 +256,19 @@ td.ranked {
   min-width: 260px;
 }
 
+/* --- EDA report ------------------------------------------------------------ */
+.eda-frame {
+  padding: 0;
+  overflow: hidden;
+}
+.eda-frame iframe {
+  display: block;
+  width: 100%;
+  height: 78vh;
+  min-height: 560px;
+  border: 0;
+}
+
 .status {
   padding: 40px;
   text-align: center;

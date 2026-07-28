@@ -30,6 +30,7 @@ PREDICTIONS_FILE = ARTIFACTS / "predictions.json"
 IMPORTANCES_FILE = ARTIFACTS / "importances.json"
 
 APP_TITLE = "House Price Predictor"
+DATASET_NAME = "Ames Housing"
 APP_SUBTITLE = (
     "Ames Housing (Kaggle) — {n} regression models predict a home's sale price "
     "from 14 of its characteristics."

@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { fetchConfig } from "./api.js";
 import ComparisonTab from "./components/ComparisonTab.jsx";
 import DiagnosticsTab from "./components/DiagnosticsTab.jsx";
+import EdaTab from "./components/EdaTab.jsx";
 import InterpretabilityTab from "./components/InterpretabilityTab.jsx";
 import PredictTab from "./components/PredictTab.jsx";
 
+// EDA is last so Predict stays the landing tab — the 3.8 MB profiling report
+// only loads once someone actually asks for it.
 const TABS = [
   { id: "predict", label: "Predict", Component: PredictTab },
   { id: "comparison", label: "Model comparison", Component: ComparisonTab },
   { id: "importance", label: "Feature importance", Component: InterpretabilityTab },
   { id: "diagnostics", label: "Diagnostics", Component: DiagnosticsTab },
+  { id: "eda", label: "EDA", Component: EdaTab },
 ];
 
 export default function App() {

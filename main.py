@@ -76,6 +76,7 @@ def get_config() -> dict:
     """Everything the UI needs to render before the user does anything."""
     return {
         "appTitle": config.APP_TITLE,
+        "datasetName": config.DATASET_NAME,
         "appSubtitle": config.APP_SUBTITLE.format(n=len(MODEL_RANKING)),
         "targetLabel": config.TARGET_LABEL,
         "targetPrefix": config.TARGET_PREFIX,
