@@ -1,7 +1,7 @@
 # HSC Result Predictor
 
 Predicts a student's HSC result from background data (family, schooling, habits,
-SSC result) and compares five regression models side by side.
+SSC result) and compares six regression models side by side.
 
 **React frontend + FastAPI backend**, deployed separately: frontend on Vercel,
 backend on Render.
@@ -19,8 +19,9 @@ a value label, and the table repeats the numbers in full.
 
 ## Models
 
-Linear Regression · Random Forest · Gradient Boosting · Voting Ensemble ·
-Stacking Ensemble (Ridge meta-learner) — each wrapped in the same preprocessing
+Linear Regression · Random Forest · Gradient Boosting · Support Vector
+Regression (RBF) · Voting Ensemble · Stacking Ensemble (Ridge meta-learner) —
+each wrapped in the same preprocessing
 pipeline (median impute + scaling for numeric, mode impute + one-hot for
 categorical) and evaluated on an identical 20% hold-out split.
 
@@ -108,5 +109,5 @@ purpose: a catch-all also swallows `/api/*` and serves `index.html`, so a missin
 The API loads pre-trained pipelines at startup. Training instead takes ~15 s
 locally and a minute or more on shared CPU, which delays the port bind past the
 platform health check — the container gets killed with a clean log and no
-traceback. `train.py` saves with `compress=3`, taking the five pipelines from
-68 MB to ~14 MB while still loading in under a second.
+traceback. `train.py` saves with `compress=3`, taking the pipelines from ~68 MB
+to ~14 MB while still loading in under a second.

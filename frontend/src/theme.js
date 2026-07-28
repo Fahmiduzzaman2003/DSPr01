@@ -13,11 +13,29 @@ export const MUTED = "#898781";
 export const GRID = "#e1e0d9";
 export const AXIS = "#c3c2b7";
 
-/** `count` colours from the ramp, best first, evenly spaced when count < 5. */
+const hexToRgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+const rgbToHex = (rgb) =>
+  "#" + rgb.map((v) => Math.round(v).toString(16).padStart(2, "0")).join("");
+
+/**
+ * `count` colours sampled along the ramp, best first.
+ *
+ * Interpolates between the ramp stops rather than snapping to them, so any
+ * number of models gets a distinct colour — snapping hands two models the same
+ * hue as soon as `count` exceeds the number of stops.
+ */
 export function rankColors(count, ramp = RANK_RAMP) {
   if (count <= 1) return [ramp[0]];
-  const steps = ramp.length - 1;
-  return Array.from({ length: count }, (_, i) =>
-    ramp[Math.round((i * steps) / (count - 1))]
-  );
+
+  const lastStop = ramp.length - 1;
+  return Array.from({ length: count }, (_, i) => {
+    const position = (i / (count - 1)) * lastStop;
+    const lower = Math.floor(position);
+    if (lower >= lastStop) return ramp[lastStop];
+
+    const t = position - lower;
+    const from = hexToRgb(ramp[lower]);
+    const to = hexToRgb(ramp[lower + 1]);
+    return rgbToHex(from.map((c, channel) => c + (to[channel] - c) * t));
+  });
 }

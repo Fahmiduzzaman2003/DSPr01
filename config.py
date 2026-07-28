@@ -1,6 +1,6 @@
 """Shared configuration: paths, dataset schema and the model zoo.
 
-Kept separate from `train.py` / `app.py` so the training script and the UI
+Kept separate from `train.py` / `main.py` so the training script and the API
 always agree on model names, artifact locations and the feature contract.
 """
 
@@ -13,6 +13,7 @@ from sklearn.ensemble import (
     VotingRegressor,
 )
 from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.svm import SVR
 
 ROOT = Path(__file__).parent
 DATA_FILE = ROOT / "BSP.csv"
@@ -50,7 +51,15 @@ RANDOM_STATE = 42
 
 
 def build_models() -> dict:
-    """The five estimators compared in the notebook (fresh instances each call)."""
+    """The estimators being compared (fresh instances each call).
+
+    SVR relies on the scaling already done by the numeric transformer — an RBF
+    kernel is distance-based, so unscaled features would let `tuition_fee`
+    (~71,000) drown out everything else.
+
+    The ensembles deliberately keep their original three base learners so the
+    figures reported for them stay comparable across runs.
+    """
     linear = LinearRegression()
     forest = RandomForestRegressor(n_estimators=100, random_state=RANDOM_STATE)
     boosting = GradientBoostingRegressor(n_estimators=100, random_state=RANDOM_STATE)
@@ -60,6 +69,7 @@ def build_models() -> dict:
         "Linear Regression": linear,
         "Random Forest": forest,
         "Gradient Boosting": boosting,
+        "Support Vector Regression": SVR(kernel="rbf", C=1.0, epsilon=0.1),
         "Voting Ensemble": VotingRegressor(estimators=base),
         "Stacking Ensemble": StackingRegressor(
             estimators=base, final_estimator=Ridge()

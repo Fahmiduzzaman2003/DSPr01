@@ -26,8 +26,9 @@ export default function App() {
       <header className="app-header">
         <h1>HSC Result Predictor</h1>
         <p>
-          Five regression models trained on student background data — predict a result
-          and compare how the models perform.
+          {config ? config.modelRanking.length : ""} regression models trained on
+          student background data — predict a result and compare how the models
+          perform.
         </p>
       </header>
 

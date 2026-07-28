@@ -121,7 +121,7 @@ def main() -> None:
         joblib.dump(
             pipeline, config.MODELS_DIR / f"{config.slugify(name)}.joblib", compress=3
         )
-        print(f"  {name:<20} R2={metrics[name]['R2']:.4f}  MAE={metrics[name]['MAE']:.4f}")
+        print(f"  {name:<26} R2={metrics[name]['R2']:.4f}  MAE={metrics[name]['MAE']:.4f}")
 
     config.METRICS_FILE.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
     config.PREDICTIONS_FILE.write_text(
