@@ -41,6 +41,69 @@ body {
   color: var(--ink-secondary);
 }
 
+/* --- Landing page ---------------------------------------------------------- */
+.back-link {
+  display: inline-block;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.back-link:hover {
+  color: var(--accent);
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.choice-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--card-accent);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.choice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
+}
+.choice-card:focus-visible {
+  outline: 2px solid var(--card-accent);
+  outline-offset: 2px;
+}
+.choice-kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+}
+.choice-card h2 {
+  margin: 6px 0 8px;
+  font-size: 20px;
+}
+.choice-card p {
+  margin: 0 0 6px;
+  color: var(--ink-secondary);
+}
+.choice-detail {
+  font-size: 13px;
+  color: var(--muted);
+}
+.choice-cta {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--card-accent);
+}
+
 /* --- Tabs ------------------------------------------------------------------ */
 .tabs {
   display: flex;
