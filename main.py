@@ -45,6 +45,7 @@ def _load_json(path):
 
 METRICS: dict[str, dict[str, float]] = _load_json(config.METRICS_FILE)
 HOLDOUT: dict = _load_json(config.PREDICTIONS_FILE)
+IMPORTANCES: dict[str, list[dict]] = _load_json(config.IMPORTANCES_FILE)
 FEATURES: list[dict] = _load_json(config.SCHEMA_FILE)["features"]
 
 # Models ranked best to worst on the primary metric — drives every rank colour.
@@ -144,6 +145,34 @@ def diagnostics(model_name: str) -> dict:
         ],
         "residualMean": float(residuals.mean()),
         "residualStd": float(residuals.std()),
+    }
+
+
+@app.get("/api/importance/{model_name}")
+def importance(model_name: str) -> dict:
+    """Permutation importance for one model, most important feature first."""
+    if model_name not in IMPORTANCES:
+        raise HTTPException(404, f"Unknown model: {model_name}")
+
+    rows = IMPORTANCES[model_name]
+    # Negative scores mean shuffling the column *helped* — noise, not signal.
+    total = sum(max(row["importance"], 0.0) for row in rows) or 1.0
+
+    features = [
+        {
+            **row,
+            # The form labels carry parenthetical hints that are too long for an
+            # axis, so trim to the part before the bracket.
+            "label": config.FEATURE_LABELS.get(row["feature"], row["feature"]).split(" (")[0],
+            "share": max(row["importance"], 0.0) / total * 100,
+        }
+        for row in rows
+    ]
+    return {
+        "model": model_name,
+        "rank": MODEL_RANKING.index(model_name) + 1,
+        "features": features,
+        "metric": "R² lost when the column is shuffled",
     }
 
 

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { fetchConfig } from "./api.js";
 import ComparisonTab from "./components/ComparisonTab.jsx";
 import DiagnosticsTab from "./components/DiagnosticsTab.jsx";
+import InterpretabilityTab from "./components/InterpretabilityTab.jsx";
 import PredictTab from "./components/PredictTab.jsx";
 
 const TABS = [
   { id: "predict", label: "Predict", Component: PredictTab },
   { id: "comparison", label: "Model comparison", Component: ComparisonTab },
+  { id: "importance", label: "Feature importance", Component: InterpretabilityTab },
   { id: "diagnostics", label: "Diagnostics", Component: DiagnosticsTab },
 ];
 

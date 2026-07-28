@@ -44,6 +44,9 @@ export const fetchConfig = () => request("/api/config");
 export const fetchDiagnostics = (model) =>
   request(`/api/diagnostics/${encodeURIComponent(model)}`);
 
+export const fetchImportance = (model) =>
+  request(`/api/importance/${encodeURIComponent(model)}`);
+
 export const postPredict = (values) =>
   request("/api/predict", {
     method: "POST",

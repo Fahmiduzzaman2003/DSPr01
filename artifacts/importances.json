@@ -1,0 +1,434 @@
+{
+  "Linear Regression": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.7331739503103354,
+      "std": 0.10232464750593225
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.03545912417839329,
+      "std": 0.003635044137706652
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.02577579498830328,
+      "std": 0.0031122657742512386
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.015624099198180507,
+      "std": 0.002004510806785368
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.012929567360528827,
+      "std": 0.0015838188741508575
+    },
+    {
+      "feature": "famsize",
+      "importance": 0.0002826427676577148,
+      "std": 0.00017226276621253159
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.00025420322474269954,
+      "std": 0.0001788399582334854
+    },
+    {
+      "feature": "F_Job",
+      "importance": 0.00014428279310206847,
+      "std": 0.00027515046793003364
+    },
+    {
+      "feature": "age",
+      "importance": 0.00013876451665125744,
+      "std": 0.0002665177201925078
+    },
+    {
+      "feature": "smoker",
+      "importance": 0.0001333702326664188,
+      "std": 0.00011804062053297354
+    },
+    {
+      "feature": "M_Job",
+      "importance": 0.00010134395935642581,
+      "std": 0.0002654330958088161
+    },
+    {
+      "feature": "gender",
+      "importance": -6.672311544919652e-06,
+      "std": 4.2324391852834946e-05
+    },
+    {
+      "feature": "Pstatus",
+      "importance": -8.239136495954424e-05,
+      "std": 2.588244655496851e-05
+    },
+    {
+      "feature": "address",
+      "importance": -8.300463730738228e-05,
+      "std": 0.00010596549503310746
+    }
+  ],
+  "Random Forest": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.7523669268325086,
+      "std": 0.10082673381792859
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.028971382970896464,
+      "std": 0.0033204860190875667
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.016576247747487217,
+      "std": 0.0022981689793005592
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.007552632902044043,
+      "std": 0.001160236249627361
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.005430852836605893,
+      "std": 0.0015638168711897837
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.00039089215360804674,
+      "std": 0.0005337366733682526
+    },
+    {
+      "feature": "famsize",
+      "importance": 0.00028533857903524363,
+      "std": 0.00028062383257015385
+    },
+    {
+      "feature": "smoker",
+      "importance": 0.00027691465184831454,
+      "std": 0.00016740360695590274
+    },
+    {
+      "feature": "Pstatus",
+      "importance": 4.012636093642108e-05,
+      "std": 0.0001328188540029169
+    },
+    {
+      "feature": "F_Job",
+      "importance": 2.9651366489091836e-05,
+      "std": 0.0003112786988793178
+    },
+    {
+      "feature": "age",
+      "importance": -1.9114188069635495e-05,
+      "std": 0.00022122407628814226
+    },
+    {
+      "feature": "address",
+      "importance": -0.00023015346053019138,
+      "std": 0.0001311927502270933
+    },
+    {
+      "feature": "gender",
+      "importance": -0.0002821897229578929,
+      "std": 0.0002254324974584709
+    },
+    {
+      "feature": "M_Job",
+      "importance": -0.0006557061914813422,
+      "std": 0.00038337291775073255
+    }
+  ],
+  "Gradient Boosting": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.7479076872615606,
+      "std": 0.09752611805674193
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.033275346430222855,
+      "std": 0.003698650689562742
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.02138782734435448,
+      "std": 0.0026987265091262345
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.011255191139741461,
+      "std": 0.0014103855588565094
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.010348781688360741,
+      "std": 0.0014934110920160955
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.0007585628703209113,
+      "std": 0.0002845928500467958
+    },
+    {
+      "feature": "F_Job",
+      "importance": 0.00029260250354781194,
+      "std": 0.00014582159729053444
+    },
+    {
+      "feature": "M_Job",
+      "importance": 0.00017556325042707987,
+      "std": 0.0001501476114573964
+    },
+    {
+      "feature": "age",
+      "importance": 0.00012040836403228727,
+      "std": 6.320477506279385e-05
+    },
+    {
+      "feature": "Pstatus",
+      "importance": 0.00010519737425980224,
+      "std": 1.98669349215137e-05
+    },
+    {
+      "feature": "famsize",
+      "importance": 3.7731430438703305e-05,
+      "std": 7.421287486892737e-05
+    },
+    {
+      "feature": "address",
+      "importance": 3.4708473696798414e-05,
+      "std": 3.564145093905427e-05
+    },
+    {
+      "feature": "smoker",
+      "importance": 1.0187705379527402e-06,
+      "std": 7.38199472734315e-05
+    },
+    {
+      "feature": "gender",
+      "importance": -2.6094117877406564e-05,
+      "std": 8.937208939971723e-05
+    }
+  ],
+  "Support Vector Regression": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.6954620975397898,
+      "std": 0.09911858262585516
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.03845971079322615,
+      "std": 0.004333743330833672
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.026963022777347502,
+      "std": 0.0031670566822591005
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.013719869948647745,
+      "std": 0.0023121890336815806
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.012246602995896194,
+      "std": 0.0019404813122202253
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.00365822148198115,
+      "std": 0.0014011554188995382
+    },
+    {
+      "feature": "address",
+      "importance": 0.002746631195432547,
+      "std": 0.0006439158709823244
+    },
+    {
+      "feature": "F_Job",
+      "importance": 0.0021342024941518266,
+      "std": 0.0009151729017534963
+    },
+    {
+      "feature": "age",
+      "importance": 0.0016890413651946435,
+      "std": 0.0012883518965877514
+    },
+    {
+      "feature": "smoker",
+      "importance": 0.0012317030982978761,
+      "std": 0.0007987249252551379
+    },
+    {
+      "feature": "gender",
+      "importance": 0.0011146226799030768,
+      "std": 0.00038547378879656214
+    },
+    {
+      "feature": "M_Job",
+      "importance": 0.001088440431958826,
+      "std": 0.0011251244935781594
+    },
+    {
+      "feature": "famsize",
+      "importance": 0.0005552866375686305,
+      "std": 0.0007095738808534177
+    },
+    {
+      "feature": "Pstatus",
+      "importance": -0.0006517369834279751,
+      "std": 0.00023174406852265956
+    }
+  ],
+  "Voting Ensemble": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.7443271894392525,
+      "std": 0.09999243293708716
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.032232509414692835,
+      "std": 0.003289967939489996
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.021094898287168994,
+      "std": 0.002619085065990389
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.010676135872388226,
+      "std": 0.001315422145586429
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.01009235598050181,
+      "std": 0.0015518708570106477
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.00044461239731365956,
+      "std": 0.00021408441452410945
+    },
+    {
+      "feature": "age",
+      "importance": 0.00017579272234945486,
+      "std": 0.00013065604649061023
+    },
+    {
+      "feature": "F_Job",
+      "importance": 0.0001739520976508091,
+      "std": 0.00017211482511412008
+    },
+    {
+      "feature": "smoker",
+      "importance": 0.00013250019455552932,
+      "std": 0.00010325089045021067
+    },
+    {
+      "feature": "famsize",
+      "importance": 0.00011924276210799612,
+      "std": 0.00011516542079705166
+    },
+    {
+      "feature": "Pstatus",
+      "importance": 5.926567794322102e-05,
+      "std": 3.476125254801865e-05
+    },
+    {
+      "feature": "M_Job",
+      "importance": -7.781216172267902e-05,
+      "std": 0.0001595404607624293
+    },
+    {
+      "feature": "address",
+      "importance": -9.751752697967353e-05,
+      "std": 4.338978292298653e-05
+    },
+    {
+      "feature": "gender",
+      "importance": -0.00011651624195060383,
+      "std": 5.9813166212140925e-05
+    }
+  ],
+  "Stacking Ensemble": [
+    {
+      "feature": "ssc_result",
+      "importance": 1.7579195889982238,
+      "std": 0.09984920739587246
+    },
+    {
+      "feature": "time_friends",
+      "importance": 0.03342362412912327,
+      "std": 0.0034124068375457504
+    },
+    {
+      "feature": "relationship",
+      "importance": 0.022315889456361194,
+      "std": 0.0027052074572919377
+    },
+    {
+      "feature": "F_Edu",
+      "importance": 0.01165639272666249,
+      "std": 0.0014108429888545597
+    },
+    {
+      "feature": "M_Edu",
+      "importance": 0.011381391687177844,
+      "std": 0.0015395618349722568
+    },
+    {
+      "feature": "tuition_fee",
+      "importance": 0.0004730079057715275,
+      "std": 0.00015001367154148965
+    },
+    {
+      "feature": "F_Job",
+      "importance": 0.00022030109210052773,
+      "std": 0.00012663751030307605
+    },
+    {
+      "feature": "age",
+      "importance": 0.00016454912651759913,
+      "std": 0.00010307745677146209
+    },
+    {
+      "feature": "famsize",
+      "importance": 9.818408242450172e-05,
+      "std": 8.318733761779746e-05
+    },
+    {
+      "feature": "M_Job",
+      "importance": 9.314571327563303e-05,
+      "std": 0.00011328688973095135
+    },
+    {
+      "feature": "Pstatus",
+      "importance": 6.173659803243581e-05,
+      "std": 1.608061496460415e-05
+    },
+    {
+      "feature": "smoker",
+      "importance": 5.8604024609865134e-05,
+      "std": 8.177906207782684e-05
+    },
+    {
+      "feature": "gender",
+      "importance": -4.191175180536799e-05,
+      "std": 4.277591048374404e-05
+    },
+    {
+      "feature": "address",
+      "importance": -4.9009954810919075e-05,
+      "std": 2.7483593684760845e-05
+    }
+  ]
+}

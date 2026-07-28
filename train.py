@@ -20,6 +20,7 @@ import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
+from sklearn.inspection import permutation_importance
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -64,6 +65,37 @@ def evaluate(y_true, y_pred) -> dict[str, float]:
     }
 
 
+def feature_importance(pipeline, X_test, y_test) -> list[dict]:
+    """How much R² each raw feature is worth, measured by permutation.
+
+    Permutation importance is used for every model because it is the only method
+    all of them support — SVR and the ensembles expose no `feature_importances_`,
+    and it keeps the numbers comparable across algorithms.
+
+    Measured on the raw 14 columns rather than the 28 encoded ones, so a
+    categorical feature reports one score instead of one per dummy column.
+    `n_jobs` is left at 1 on purpose: parallel workers each copy the pipeline and
+    exhaust memory on the ensembles.
+    """
+    result = permutation_importance(
+        pipeline,
+        X_test,
+        y_test,
+        n_repeats=10,
+        random_state=config.RANDOM_STATE,
+        scoring="r2",
+    )
+    rows = [
+        {
+            "feature": column,
+            "importance": float(mean),
+            "std": float(std),
+        }
+        for column, mean, std in zip(X_test.columns, result.importances_mean, result.importances_std)
+    ]
+    return sorted(rows, key=lambda row: row["importance"], reverse=True)
+
+
 def describe_features(X: pd.DataFrame) -> list[dict]:
     """Feature contract the UI turns into input widgets."""
     schema = []
@@ -106,6 +138,7 @@ def main() -> None:
 
     metrics: dict[str, dict[str, float]] = {}
     predictions: dict[str, list[float]] = {}
+    importances: dict[str, list[dict]] = {}
 
     for name, estimator in config.build_models().items():
         pipeline = Pipeline(
@@ -116,14 +149,22 @@ def main() -> None:
 
         metrics[name] = evaluate(y_test, y_pred)
         predictions[name] = [float(v) for v in y_pred]
-        # compress=3 takes the five pipelines from 68 MB to ~14 MB, small enough
-        # to ship with the Space so it never has to train during startup.
+        importances[name] = feature_importance(pipeline, X_test, y_test)
+        # compress=3 takes the six pipelines from 68 MB to ~14 MB, small enough
+        # to ship with the app so it never has to train during startup.
         joblib.dump(
             pipeline, config.MODELS_DIR / f"{config.slugify(name)}.joblib", compress=3
         )
-        print(f"  {name:<26} R2={metrics[name]['R2']:.4f}  MAE={metrics[name]['MAE']:.4f}")
+        top = importances[name][0]
+        print(
+            f"  {name:<26} R2={metrics[name]['R2']:.4f}  MAE={metrics[name]['MAE']:.4f}"
+            f"  top={top['feature']}"
+        )
 
     config.METRICS_FILE.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+    config.IMPORTANCES_FILE.write_text(
+        json.dumps(importances, indent=2), encoding="utf-8"
+    )
     config.PREDICTIONS_FILE.write_text(
         json.dumps(
             {"y_true": [float(v) for v in y_test], "y_pred": predictions}, indent=2

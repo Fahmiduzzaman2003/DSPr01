@@ -23,6 +23,7 @@ MODELS_DIR = ARTIFACTS / "models"
 METRICS_FILE = ARTIFACTS / "metrics.json"
 SCHEMA_FILE = ARTIFACTS / "schema.json"
 PREDICTIONS_FILE = ARTIFACTS / "predictions.json"
+IMPORTANCES_FILE = ARTIFACTS / "importances.json"
 
 TARGET = "hsc_result"
 TARGET_LABEL = "HSC result"
