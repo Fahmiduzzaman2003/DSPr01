@@ -22,3 +22,6 @@ ydata.html
 # Separate repos / scratch, not part of this project
 DSLABProject/
 deploy_build/
+
+# Report build environment
+report/figures/*.tmp
